@@ -304,7 +304,7 @@ var digits = 0;
   
   if (digits == 6) {
     
-    $("#numBox").effect( "shake", {times:4}, 200 );
+    $("#numBox").effect( "shake", {times:4, distance: 5}, 200 );
   } 
   
   
@@ -380,50 +380,51 @@ var digits = 0;
     //decimal entry
   
   
+/*
   
   
-   function GetNumberAfterAppendingDecimal(str) {
-        if (str.length < 3)
-            return str;
-        var positionFromEnd = 2;
-        var reversedStr = str.split('').reverse().join('');
-        if (str.length == 3)
-            positionFromEnd -= 1;
-        reversedStr = [reversedStr.slice(0, positionFromEnd), ".", reversedStr.slice(positionFromEnd)].join('');
-        return reversedStr.split('').reverse().join('');
-    }
-    function GetCleanString(str) {
-    str = str.replace(/[\r]+/, '');
-    str = str.replace(/[\n]+/, '');
-    str = str.replace(/[\t]+/, '');
-    str = str.replace('.', '');
-    str = $.trim(str);
-    return str;
-    }
-  
-   
-   
-    $('.key').hammer().on("touch", function(ev) {
-      
-     var inputNumber=GetCleanString($("#numBox").html());
-
-     $("#numBox").html(GetNumberAfterAppendingDecimal(inputNumber));
-      
-      
-      
-       $('div.btn').hammer().on("touch", function(ev) {
+function GetNumberAfterAppendingDecimal(str) {
+	if (str.length < 3)
+		return str;
+		var positionFromEnd = 2;
+		var reversedStr = str.split('').reverse().join('');
+	if (str.length == 3)
+		positionFromEnd -= 1;
+		reversedStr = [reversedStr.slice(0, positionFromEnd), ".", 
+		reversedStr.slice(positionFromEnd)].join('');
+	return reversedStr.split('').reverse().join('');
+}
+function GetCleanString(str) {
+	str = str.replace(/[\r]+/, '');
+	str = str.replace(/[\n]+/, '');
+	str = str.replace(/[\t]+/, '');
+	str = str.replace('.', '');
+	str = $.trim(str);
+	return str;
+}
 
 
- var inputNumber=GetCleanString($("#numBox").html());
 
- $("#numBox").html(GetNumberAfterAppendingDecimal(inputNumber));
+$('.key').hammer().on("touch", function(ev) {
 
- });
-   
+	var inputNumber=GetCleanString($("#numBox").html());
+
+	$("#numBox").html(inputNumber);
+
+
+$('div.btn').hammer().on("touch", function(ev) {
+
+	var inputNumber=GetCleanString($("#numBox").html());
+
+	$("#numBox").html(inputNumber);
+
+});
+
     
      });
   
   
+*/
   
       
    /*   

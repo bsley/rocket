@@ -654,7 +654,7 @@ $('#hook').hook({
     <section id="new">
     
 <!-- 	    <div class="total">$0</div> -->
-    <div id="numBox">0</div>
+    <div id="numBox"></div>
 	    
 	    <div class="keypad">
 	    	<div class="key">1</div>
@@ -666,9 +666,9 @@ $('#hook').hook({
         <div class="key">7</div>
         <div class="key">8</div>
         <div class="key">9</div>
-        <div class="btn">DEL</div>
+        <div class="key">.</div>
         <div class="key">0</div>
-        <div class="btn">CLR</div>
+        <div class="btn">D</div>
 	   	</div>
 	   	
 	   	<a class="continue">Next</a>

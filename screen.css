@@ -9,8 +9,8 @@
 
 body {
 	
-	font-size: 14px;
-	-webkit-touch-callout: none;
+font-size: 14px;
+-webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
@@ -21,10 +21,7 @@ max-width: 320px;
 max-height: 600px !important;
 overflow: hidden;
 
-font-family: 'Source Code Pro';
-
-	
-	
+font-family: 'Source Code Pro';	
 }
 
 
@@ -603,15 +600,17 @@ content:"$";
 }
 
 #new .keypad .key, #new .keypad .btn {
-	width: 27%;
+	width: 68px;
+	height: 68px;
 	margin: .1em 3% .1em 3%;
 	float: left;
 	text-align: center;
 	color: #fff;
 	overflow: auto;
-	font-size: 3.5em;
-	
-	border-bottom: 1px solid #fff;
+	font-size: 3em;
+	border: 1px solid #999;
+	border-radius: 1000px;
+/* 	border-bottom: 1px solid #fff; */
 	cursor: pointer;
 }
 
@@ -648,7 +647,10 @@ content:"$";
 	padding: 20px 0 20px 0;
 	text-align: center;
 	cursor: pointer;
+	display: none;
 }
+
+
 
 
 
