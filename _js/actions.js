@@ -13,29 +13,39 @@ $( document ).ready(function() {
 	$( "#wrapper section" ).hide();
 	$( ".section_head" ).hide();
 	$( ".back_button" ).hide();
-	$( "#status" ).show();
-	$( ".section_head.status" ).show();
-/* 	$("#splash").hide(); */
+	$( "#new" ).show();
+/* 	$( ".section_head.status" ).show(); */
+	$("#splash").hide();
+	$("#blackbar").hide();
+	$(".next, .prev").hide();
 	
+	
+	
+function resetKeypad() {
+   $( "#numBox").innerHTML("");
+   hasdec = false;
+   fromdec = 0;
+}	
 	
 	// PREVENT ELASTIC SCROLLING
  
-    
-	/*
-$(document).bind(
-		'touchmove', 
-		function(e) {
+  /*
+  
+	$(document).bind(
+		'touchmove', function(e) {
 		e.preventDefault();
 	});
 */
 
 
+/*
 
 		$("#splash").delay(1500).fadeTo(400, 0, function() {
 	        $(this).hide();
 	    }); 
 	              
 	
+*/
 
 
 
@@ -83,10 +93,34 @@ $(document).bind(
 	
 	$( "#header nav a" ).hammer().on("tap", function(ev) {
 				
+		$(".next, .prev").hide();		
 		$( ".pushpanel" ).css("margin-left", "350px");
+		$("html, body").animate({ scrollTop: 0 },  200);
+  return false;
+	  	
+
 		
 	});
+
+
+	$( "#header nav .transactions, #header nav .bills, #header nav .budgets" ).hammer().on("tap", function(ev) {
+		$( "#blackbar" ).show();
+	});
 	
+	
+
+	$( "#header nav .status, #header nav .new" ).hammer().on("tap", function(ev) {
+		$( "#blackbar" ).hide();
+	});
+	
+// RESETS KEYPAD
+	
+/*
+	$( "#header nav .status, #header nav .transactions, #header nav .bills, #header nav .budgets" ).hammer().on("tap", function(ev) {
+		resetKeypad();
+	});
+	
+*/
 
 
 // NAV
@@ -226,91 +260,161 @@ $(document).bind(
 	});
 	
 
-	
+
 // TRANSACTION ENTRY
 
 
-var digits = 0; 
-  var numBox = document.getElementById('numBox');
+	var numBox = document.getElementById('numBox');
+	var hasdec = 0;
+	var fromdec = 0;
 
-  // mac characters
-  
-  $('.key').hammer().on("touch", function(ev) {
-  
-  if (digits == 6) {
-    
-    $("#numBox").effect( "shake", {times:4, distance: 5}, 200 );
-  } 
-  
-  
-  });
-  
-  
-  // removing the initial zero
-  
-  var haszero = 1;
-/*
-  
-  $('.key').hammer().on("touch", function(ev) {
-  
-  if (haszero == 1) {
-    
-   console.log($("numBox").innerHTML);
-   haszero = 0;
-  } 
-  
-  
-  });
-  
-*/
-  
-    
-    $('.key').hammer().on("touch", function(ev) {
-      
-      
-        if(this.innerHTML > 6 && digits < 6){
-            if (numBox.innerHTML.length > 0)
-                numBox.innerHTML = numBox.innerHTML + this.innerHTML;
-                digits += 1;
-                //console.log("digits"); 
-          
+
+	// ADD NUMBERS
+
+	$('.key').hammer().on("tap", function(ev) {
+	 
+	 	if(fromdec < 2) {
+	  		if(numBox.innerHTML.length < 7){
+	    		numBox.innerHTML = numBox.innerHTML + this.innerHTML;
+	    		console.log("keep going...");
+
+	   		}
+	  		else if (numBox.innerHTML.length == 7) {
+	    		console.log("limit reached");
+    	    	$("#numBox").effect( "shake", {times:4, distance: 2}, 200 );
+
+			}
+	  	}
+	  	
+	  	else if(fromdec == 2) {
+	  		console.log("limit reached");
+	    	$("#numBox").effect( "shake", {times:4, distance: 2}, 200 );	
+	  	
+	  	}
+	  	
+	  	else {
+	    
+	  	}
+	    event.stopPropagation();
+	});
+	
+	// SHRINK TEXT
+	
+	$('.key, .btn').hammer().on("tap", function(ev) {
+		
+		if(numBox.innerHTML.length < 5) {
+			$( "#numBox").css("font-size", "60px");
+			$( "#numBox").css("margin-top", "0px");
+            console.log("LENGTH: " + numBox.innerHTML.length);
+
+		}
+		
+		else if(numBox.innerHTML.length > 5) {
+			$( "#numBox").css("font-size", "40px");
+			$( "#numBox").css("margin-top", "15px");
+            console.log("LENGTH: " + numBox.innerHTML.length);
+
+		}		
+	});
+	
+	
+	// ADD DECIMAL
+	
+	$('.dec').hammer().on("tap", function(ev) {
+	
+		if (hasdec == 0) {
+	    	numBox.innerHTML = numBox.innerHTML + ".";
+	 		hasdec = true;
+	 		console.log("hasdec " + hasdec);
+            console.log("fromdec " + fromdec);
+		}
+		
+		else {
+			//nothing
+		}	 	
+
+	});
+	
+	
+	// ADD FROMDEC
+	
+	$('.key').hammer().on("tap", function(ev) {
+	
+		if(hasdec == true && fromdec < 2) {
+			fromdec += 1;
+			console.log("hasdec " + hasdec);
+            console.log("fromdec " + fromdec);
+		}
+		
+		else if (hasdec == false) {
+			fromdec = 0;
+			console.log("hasdec " + hasdec);
+            console.log("fromdec " + fromdec);
+		}
+		
+  	});
+  	
+  	
+    // DELETE KEY
+
+    $('.btn').hammer().on("tap", function(ev) {
+       
+        if(numBox.innerHTML.length > 0 && fromdec > 0){
+            numBox.innerHTML = numBox.innerHTML.substring(0, numBox.innerHTML.length - 1);
+            fromdec -= 1;
+            console.log("hasdec " + hasdec);
+            console.log("fromdec " + fromdec);
         }
-      else if (digits < 6) {
-            // add digits          
-            numBox.innerHTML = numBox.innerHTML + this.innerHTML;
-            digits += 1;
-            //console.log(digits);
-      }
-      
-      else {
         
-         
-      }
+        else if (numBox.innerHTML.length > 0 && fromdec == 0) {
+            numBox.innerHTML = numBox.innerHTML.substring(0, numBox.innerHTML.length - 1);
+            hasdec = false;
+            console.log("hasdec " + hasdec);
+            console.log("fromdec " + fromdec);
+        }
+    
         event.stopPropagation();
     });
-    
-    $('.btn').hammer().on("touch", function(ev) {
-        if(this.innerHTML == 'DEL'){
-            var numBox = document.getElementById('numBox');
-            if(numBox.innerHTML.length > 0){
-                
-                // delete a digit
-                numBox.innerHTML = numBox.innerHTML.substring(0, numBox.innerHTML.length - 1);
-                digits -= 1;
-                //console.log(digits);
-            }
-        }
-        else{
-           
-            // clear numbox
-            document.getElementById('numBox').innerHTML = '';
-            digits = 0;
-            //console.log(digits);
-        }
-        
-        event.stopPropagation();
-    });
-  
+
+
+	// CONTINUE BUTTON 
+	
+	$('.key, .btn').hammer().on("tap", function(ev) {
+		
+		if (fromdec == 2) {
+/* 			$( ".numDisplay").css("background", "#b9e2d2"); */
+/* 			$( ".numDisplay").css("border-color", "#b9e2d2"); */
+			$( "#header .new" ).hide();
+			$( ".next" ).show();
+		}
+		
+		else if (fromdec < 2) {
+/* 			$( ".numDisplay").css("background", "white"); */
+			$( ".numDisplay").css("border-color", "white");
+			$( "#header .new" ).show();
+			$( ".next" ).hide();
+		}
+	});	
+	
+	
+	$('.next').hammer().on("tap", function(ev) {
+		$( ".prev").show();
+		$( ".next").hide();
+		$( ".pushpanel.new" ).animate({marginLeft: '0'}, 0);		
+		$( "#header nav a").hide();
+		
+	});
+
+
+	$('.prev').hammer().on("tap", function(ev) {
+		$( ".prev").hide();
+		$( ".next").show();
+		$( ".pushpanel.new" ).animate({marginLeft: '350'}, 0);		
+		$( "#header nav a").show();
+		
+	});
+
+
   
 
 

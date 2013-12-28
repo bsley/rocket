@@ -1,6 +1,16 @@
 rocket
 ======
 
+# Big Bugs
+- Keyboard glitches when editing info on push panels
+- scrollTop not working when transitioning between sections
+- Geolocate not working
+- Add new styling and UI not built
+
+# Little Bugs
+- No "count up" scrolling happening on big numbers
+- last row of numbers not working on keypad
+
 ## Transactions
 
 ### Add New
@@ -31,5 +41,41 @@ rocket
 -- Date Due?
 
 ###
+
+
+
+
+
+var hasdec = 0;
+var fromdec = 0;
+
+# press .key
+
+if fromdec < 2
+
+if length < 5
+	add digit
+
+else if length == 5
+	no add digit
+	shake
+
+else if fromdec == 2
+	no add digit
+	shake
+
+# press .key
+
+if hasdec == 1 
+	fromdec += 1
+
+# press .del
+
+if (length > 0 && fromdec > 0)
+	length -1
+	fromdec -1
+
+else if (length > 0 && fromdec == 0)
+	length -1
 
 

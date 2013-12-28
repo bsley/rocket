@@ -55,6 +55,59 @@
    	
    	
    	
+   	<div class="pushpanel new" >
+   		
+    	
+    	<div class="content">
+    	
+	    	<div class="horizontal">
+			    	<p>Vendor</p>
+			    	<input type="text" class="text" value="City Target">
+		    </div>
+		    
+	<!--  IS IT ___________? -->
+	
+	    	 <div class="horizontal">
+			    	<p>Budget</p>
+		
+			    	<div id="dropdown">
+			   			<select>
+				    		<option>Shopping</option>
+				    		<option>Groceries</option>
+				    		<option>Restaurants</option>
+				    		<option>Entertainment</option>
+				    		<option>Gas</option>
+				    		<option>Amy's Allowance</option>
+				    		<option>Guest</option>
+				    		<option>Taxi</option>
+				    		<option>Kids</option>
+				    	</select>
+					</div>
+		    </div>
+		    	
+	    	 <div class="horizontal">
+			    	<p>Date</p>
+		
+			    	<div id="dropdown">
+			   			<select>
+				    		<option>Dec. 28 10:12AM</option>
+				    	</select>
+					</div>
+		    </div>
+	    	
+	    	
+	    	<div id="nextsteps">
+			
+				<a class="">Add Transaction</a>
+				
+			</div>
+			
+		</div>
+		
+		 
+    	
+    </div>
+   	
    	<div class="pushpanel transactions" >
    		
    		<div class="close"><div></div></div>
@@ -91,7 +144,7 @@
     	
 			<div id="nextsteps">
 		
-			<a href="" class="">Delete Transaction</a>
+			<a class="" onclick="return confirm('Are you sure?')">Delete Transaction</a>
 			
 			</div>
 			
@@ -137,7 +190,7 @@
     	
 			<div id="nextsteps">
 		
-			<a href="" class="">Delete Budget</a>
+			<a class="" onclick="return confirm('Are you sure?')">Delete Budget</a>
 			
 			</div>
     	
@@ -175,7 +228,7 @@
     	
 			<div id="nextsteps">
 		
-			<a href="" class="">Delete Bill</a>
+			<a class="" onclick="return confirm('Are you sure?')">Delete Bill</a>
 			
 			</div>
     	
@@ -193,10 +246,23 @@
 	<div id="back"></div>
 	
 	
+	
+	<a class="prev">
+	Back
+	</a>
+	
+	
+	<a class="next">
+	Next
+	</a>
+	
 
 	<section id="header">
 	
 		
+	
+	
+	
 	
 
 		<nav>
@@ -215,24 +281,26 @@
 			
 			
 			
-			<a class="new "  >
+			<a class="new">
 				<?php include("_svg/icon_new.svg"); ?>
 			</a>
 			
 			
-			<a class="status fastclick active " >
+			
+			
+			<a class="status fastclick active">
 				<?php include("_svg/icon_status.svg"); ?>
 			</a>
 			
-			<a class="transactions "  >
+			<a class="transactions">
 				<?php include("_svg/icon_transactions.svg"); ?>
 			</a>
 			
-			<a class="budgets "  >
+			<a class="budgets">
 				<?php include("_svg/icon_budget.svg"); ?>
 			</a>
 			
-			<a class="bills "  >
+			<a class="bills">
 				<?php include("_svg/icon_bills.svg"); ?>
 			</a>
 			
@@ -638,22 +706,23 @@
     
     <section id="new">
     
-<!-- 	    <div class="total">$0</div> -->
-    <div id="numBox"></div>
-	    
+	    <div class="numDisplay">
+		    <div id="numBox"></div>
+		 </div> 
+	 
 	    <div class="keypad">
 	    	<div class="key">1</div>
-        <div class="key">2</div>
-        <div class="key">3</div>
-        <div class="key">4</div>
-        <div class="key">5</div>
-        <div class="key">6</div>
-        <div class="key">7</div>
-        <div class="key">8</div>
-        <div class="key">9</div>
-        <div class="key">.</div>
-        <div class="key">0</div>
-        <div class="btn">D</div>
+	        <div class="key">2</div>
+	        <div class="key">3</div>
+	        <div class="key">4</div>
+	        <div class="key">5</div>
+	        <div class="key">6</div>
+	        <div class="key">7</div>
+	        <div class="key">8</div>
+	        <div class="key">9</div>
+	        <div class="bottom dec">.</div>
+	        <div class="key bottom">0</div>
+	        <div class="btn del bottom"></div>
 	   	</div>
 	   	
 	   	<a class="continue">Next</a>
