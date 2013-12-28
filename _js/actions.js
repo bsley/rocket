@@ -13,20 +13,29 @@ $( document ).ready(function() {
 	$( "#wrapper section" ).hide();
 	$( ".section_head" ).hide();
 	$( ".back_button" ).hide();
-	$( ".pushpanel" ).hide();
-	$( "#new" ).show();
-/* 	$( ".section_head.status").show(); */
-	$("#splash").hide();
+	$( "#status" ).show();
+	$( ".section_head.status" ).show();
+/* 	$("#splash").hide(); */
+	
+	
+	// PREVENT ELASTIC SCROLLING
+ 
+    
+	/*
+$(document).bind(
+		'touchmove', 
+		function(e) {
+		e.preventDefault();
+	});
+*/
 
 
-/*
 
 		$("#splash").delay(1500).fadeTo(400, 0, function() {
 	        $(this).hide();
 	    }); 
 	              
 	
-*/
 
 
 
@@ -46,118 +55,44 @@ $( document ).ready(function() {
 	
 
 	
-	
-// PUSH - TRANSACTIONS
+// PUSHPANELS
 
-	$( "#transactions .item" ).hammer().on("touch", function(ev) {
-		
-			// hide content
-			$( "#wrapper" ).hide();
-			
-			// back button
-			$( ".pushpanel.transactions" ).show();
-			$( ".section_head.transactions" ).hide();
-			$( ".back_button.transactions" ).show();
-							
+	$( "#transactions .item" ).hammer().on("tap", function(ev) {
+	  $( ".pushpanel.transactions" ).animate({marginLeft: '0'}, 0);
+	    
 	});
 	
-	
-	$( ".back_button.transactions" ).hammer().on("touch", function(ev) {
-	
-			// show content
-			$( "#wrapper" ).show();
-			
-			// back button
-			$( ".pushpanel.transactions" ).hide();
-			$( ".section_head.transactions" ).show();
-			$( ".back_button.transactions" ).hide();
-
-			
+	$( "#budgets .item" ).hammer().on("tap", function(ev) {
+	  $( ".pushpanel.budgets" ).animate({marginLeft: '0'}, 0);
+	    
 	});
 	
-	
-// PUSH - BUDGETS
-
-	$( "#budgets .item" ).hammer().on("touch", function(ev) {
-		
-			// hide content
-			$( "#wrapper" ).hide();
-			
-			// back button
-			$( ".pushpanel.budgets" ).show();
-			$( ".section_head.budgets" ).hide();
-			$( ".back_button.budgets" ).show();
-							
+	$( "#bills .item" ).hammer().on("tap", function(ev) {
+	  $( ".pushpanel.bills" ).animate({marginLeft: '0'}, 0);
+	    
 	});
-	
-	
-	$( ".back_button.budgets" ).hammer().on("touch", function(ev) {
-	
-			// show content
-			$( "#wrapper" ).show();
-			
-			// back button
-			$( ".pushpanel.budgets" ).hide();
-			$( ".section_head.budgets" ).show();
-			$( ".back_button.budgets" ).hide();
-
+	  
+	$( ".pushpanel .close" ).hammer().on("tap", function(ev) {
+	  $( ".pushpanel" ).animate({marginLeft: '350px'}, 0);
+	    
 	});
-	
-
-// PUSH - BILLS
-
-	$( "#bills .item" ).hammer().on("touch", function(ev) {
-		
-			// hide content
-			$( "#wrapper" ).hide();
-			
-			// back button
-			$( ".pushpanel.bills" ).show();
-			$( ".section_head.bills" ).hide();
-			$( ".back_button.bills" ).show();
-							
-	});
+   
 	
 	
-	$( ".back_button.bills" ).hammer().on("touch", function(ev) {
+// CLOSE ALL .PUSHPANELS
 	
-			// show content
-			$( "#wrapper" ).show();
-			
-			// back button
-			$( ".pushpanel.bills" ).hide();
-			$( ".section_head.bills" ).show();
-			$( ".back_button.bills" ).hide();
-			
-	});	
-	
-
-	
-// CLOSE ALL PUSHPANELS
-	
-	$( "#header nav a" ).hammer().on("touch", function(ev) {
+	$( "#header nav a" ).hammer().on("tap", function(ev) {
 				
-		$( ".pushpanel" ).hide();
-		$( "#wrapper" ).show();
-		$( ".section_head" ).show();
-		$( ".back_button" ).hide();
-
+		$( ".pushpanel" ).css("margin-left", "350px");
 		
-		A = 0;
-		B = 0;
-		C = 0;
-		D = 0;
-		
-
-
 	});
 	
-	
+
 
 // NAV
 
 
-	$( "#header .transactions" ).hammer().on("touch", function(ev) {
+	$( "#header .transactions" ).hammer().on("tap", function(ev) {
 		
 		// nav buttons
 		
@@ -176,7 +111,7 @@ $( document ).ready(function() {
 		
 	});
 	
-	$( "#header .status" ).hammer().on("touch", function(ev) {
+	$( "#header .status" ).hammer().on("tap", function(ev) {
 
 		// nav buttons
 		
@@ -196,7 +131,7 @@ $( document ).ready(function() {
 		
 	});
 	
-	$( "#header .new" ).hammer().on("touch", function(ev) {
+	$( "#header .new" ).hammer().on("tap", function(ev) {
 		
 
 		// nav buttons
@@ -217,7 +152,7 @@ $( document ).ready(function() {
 		
 	});
 	
-	$( "#header .budgets" ).hammer().on("touch", function(ev) {
+	$( "#header .budgets" ).hammer().on("tap", function(ev) {
 	
 		
 		// nav buttons
@@ -250,7 +185,7 @@ $( document ).ready(function() {
 		
 	});
 	
-	$( "#header .bills" ).hammer().on("touch", function(ev) {
+	$( "#header .bills" ).hammer().on("tap", function(ev) {
 	
 	
 		// nav buttons
@@ -377,80 +312,23 @@ var digits = 0;
     });
   
   
-    //decimal entry
-  
-  
-/*
-  
-  
-function GetNumberAfterAppendingDecimal(str) {
-	if (str.length < 3)
-		return str;
-		var positionFromEnd = 2;
-		var reversedStr = str.split('').reverse().join('');
-	if (str.length == 3)
-		positionFromEnd -= 1;
-		reversedStr = [reversedStr.slice(0, positionFromEnd), ".", 
-		reversedStr.slice(positionFromEnd)].join('');
-	return reversedStr.split('').reverse().join('');
-}
-function GetCleanString(str) {
-	str = str.replace(/[\r]+/, '');
-	str = str.replace(/[\n]+/, '');
-	str = str.replace(/[\t]+/, '');
-	str = str.replace('.', '');
-	str = $.trim(str);
-	return str;
-}
 
 
 
-$('.key').hammer().on("touch", function(ev) {
-
-	var inputNumber=GetCleanString($("#numBox").html());
-
-	$("#numBox").html(inputNumber);
 
 
-$('div.btn').hammer().on("touch", function(ev) {
 
-	var inputNumber=GetCleanString($("#numBox").html());
-
-	$("#numBox").html(inputNumber);
-
-});
-
-    
-     });
-  
-  
-*/
-  
-      
-   /*   
-     str = str.replace(".","");
-
-     
-        if(str.length > 2){
-            str = str.substr(0, str.length - 2) + '.' + str.substr(str.length - 2);
-        }
-     */
-      
-    
- /*   alert(str);*/
-    
-  
-      
-   
-    
-    
-    
-      
-	
 	
 	
 
 });
+
+
+
+
+
+
+
 
 
 

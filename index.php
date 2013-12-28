@@ -5,10 +5,8 @@
 	<head>
 		<title>Period</title>
 		
-<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>  -->
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<!-- 		<meta name="viewport" content="width=device-width" /> -->
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="apple-touch-icon" href="_img/ios_appicon.png" />
@@ -25,37 +23,18 @@
 <!-- 		<script src="http://code.jquery.com/jquery-latest.js"></script> -->
 <!-- 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.js"></script> -->
 		
+<!--
 		<link href="_hook/hook.css" rel="stylesheet">
 
 	    <script src="_hook/mousewheel.js"></script>
 	    <script src="_hook/hook.min.js"></script>
+-->
 
 		<script src="_js/actions.js"></script>
 		<script src="_js/jquery.maskMoney.js"></script>
 
 		<script src="http://eightmedia.github.io/hammer.js/dist/jquery.hammer.min.js"></script>
-		
-	<script>
-	
-
-	
-// No options
-$('#hook').hook();
-
-// Callback
-$('#hook').hook({
-  reloadPage: false,
-  reloadEl: function(){
-    console.log('Hello World!');
-  }
-});
-
-	
-
-	
-	</script>
-		
-	
+			
 
 	</head>
 <body>
@@ -77,6 +56,8 @@ $('#hook').hook({
    	
    	
    	<div class="pushpanel transactions" >
+   		
+   		<div class="close"><div></div></div>
     	
     	<div class="content">
 	    	
@@ -129,6 +110,8 @@ $('#hook').hook({
 	
 	<div class="pushpanel budgets">
     	
+   		<div class="close"><div></div></div>
+
     	<div class="content">
     	
     		<div class="horizontal">
@@ -165,6 +148,8 @@ $('#hook').hook({
     
     <div class="pushpanel bills">
     	
+   		<div class="close"><div></div></div>
+
     	<div class="content">
     	
     		<div class="horizontal">

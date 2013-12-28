@@ -755,9 +755,9 @@ float: left
 	width: 100%;
 	background: #f2f2f2 url(http://f.cl.ly/items/0d2p0O0v232Z0T0z2k06/stripe_2eff7f3f146550f922dc1bdafa425662.png) ;
 	height: 100%;
-	position: absolute;
-	top: 105px;
-	
+	position: fixed;
+	top: 0px;
+	margin-left: 350px;
 	max-width: 320px !important;
 	
 	z-index: 99999 !important;
@@ -768,18 +768,28 @@ float: left
 	
 }
 
-.pushpanel #close {
-	width: 40px; 
-	height:40px;
-	background: #f2f2f2;
+.pushpanel .close {
 	display: block;
-	position: relative;
+	position: absolute;
 	top:0;
 	float: right;
 	right: 0;
-	text-indent: -99999px; 
 	cursor: pointer;
-	margin: 20px 20px 0 0 ;
+	padding: 20px;
+	z-index: 9999;
+}
+
+.pushpanel .close div {
+	width: 20px;
+	height: 20px;
+	padding:10px;
+	background: #000 url(http://f.cl.ly/items/070d1T2v0H0a3n200t19/icon_x_white.svg) center center no-repeat;
+	background-size: 30% 30%;
+
+}
+
+.pushpanel .close:hover div  {
+	background-color: #333;
 }
 
 .pushpanel .content {

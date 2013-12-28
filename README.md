@@ -12,6 +12,8 @@ rocket
 - Vendor entry
 
 ### View in list
+- Ordered by date (forced)
+
 
 
 ## Budgets
