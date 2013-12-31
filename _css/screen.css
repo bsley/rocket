@@ -17,7 +17,7 @@ body{
 	width:100%;
 	height:100%;
 	overflow: auto;
-}
+}section
 */
 
 
@@ -46,6 +46,8 @@ body {
 	background: linear-gradient(135deg,  #ff0084 0%,#ff5d00 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', endColorstr='#ff5d00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	
+	background: #232323;
+	
 }
 
 
@@ -67,10 +69,12 @@ section {
 	top: 0px;
 	display: none;
 	overflow: auto;
-	background: white;
-	
 	
 
+}
+
+#budgets, #bills, #transactions {
+	background: white;
 }
 
 
@@ -85,8 +89,9 @@ section {
 	position: fixed;
 	overflow: hidden;
 	top:0;
+	background: #232323;
 /* 	background: #f2f2f2; */
-	z-index: 7;
+	z-index: 5555 ;
 	
 	max-width: 320px;
 	
@@ -168,13 +173,14 @@ section {
 .next, .prev {
 	background: white;
 	
-	color: #ff0084;
+/* 	color: #ff0084; */
+	color: #232323;
 	font-size: 1em;
 	font-family: 'Karla'; 
 	font-weight: 400;
 	border-radius: 4px;
-	padding: 10px;
-	top: 15px;
+	padding: 8px;
+	top: 18px;
 	position: absolute;
 	z-index: 999999999;
 }
@@ -494,6 +500,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 	padding-top: 20px;
 	display: block;
 	overflow: auto;
+	margin-top: 10px;
+		
+
 }
 
 
@@ -519,11 +528,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 
 #status #main #number {
 	width: 100%;
-/* 	background: rgba(0, 0, 0, 0.1);  */
+	background: rgba(0, 0, 0, 0.1); 
+	background: white;
 	padding-top:0;
 	font-size:8em;
-	border: 1.5px solid #fff;
-	color: #fff;
+/* 	border: 1.5px solid #fff; */
+	color: #000;
 	text-align: center;
 	font-family: 'Source Code Pro';
 	letter-spacing: -5px;
@@ -554,7 +564,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 	overflow: auto;
 	margin-bottom: 2px;
 	color: #fff;
-	border-bottom: 1.5px solid #fff;
+	border-top: 1.5px solid #424242;
 
 }
 
@@ -612,6 +622,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 	background: -ms-linear-gradient(-45deg,  #ff0084 0%,#ff5d00 100%); /* IE10+ */
 	background: linear-gradient(135deg,  #ff0084 0%,#ff5d00 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', endColorstr='#ff5d00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	
+	background: #232323;
 }
 
 #nextsteps a:hover {
@@ -700,7 +712,7 @@ content:"$";
  }
  
  #new .keypad .del {
-	background: url(_svg/x.svg) no-repeat 0 8px; 
+	background: url(../_svg/x.svg) no-repeat 0 8px; 
 	background-size: 75% 75%;
 }
 
@@ -758,8 +770,7 @@ content:"$";
 #budgets {
 	overflow: auto;
 	display: block;
-	
-	
+
 	transition: all .05s ease-in-out;
     -moz-transition: all .05s ease-in-out;
     -webkit-transition: all .05s ease-in-out;
@@ -891,12 +902,14 @@ box-shadow: -14px 0px 33px -3px rgba(0,0,0,0.2);
 	background-size: 30% 30%;
 	
 	background-color: #ff0084; 
+	background-color: #232323;
 	
 
 }
 
 .pushpanel .close:hover div  {
 	background-color: #ff5d00;
+	background-color: #ccc;
 }
 
 .pushpanel .content {

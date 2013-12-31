@@ -14,8 +14,8 @@
 
 		<link rel="shortcut icon" href="favicon.ico" />
 		
-		<link rel="stylesheet" type="text/css" href="clear.css" />
-		<link rel="stylesheet" type="text/css" href="screen.css" />
+		<link rel="stylesheet" type="text/css" href="_css/clear.css" />
+		<link rel="stylesheet" type="text/css" href="_css/screen.css" />
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -39,13 +39,6 @@
 	</head>
 <body>
 
-    <div class="hook" id="hook"></div>
-
-
-	
-
-	
-	
 
 	<div id="splash" >
    	
@@ -235,6 +228,24 @@
     	</div>
     	
     </div>
+    
+    
+    
+<!--  PUSHPANEL - BUDGET NEW -->
+    
+    <div class="pushpanel bill_create" >
+   		
+   		<div class="close"><div></div></div>
+    	
+    	<div class="content">
+	    	
+	    	<div class="horizontal">
+		    	THIS IS HOW YOU CREATE A NEW BILL
+	    	</div>
+	    	
+	    </div>
+	    
+	</div>
 	
 	
 	
@@ -901,7 +912,7 @@
 	
 		
 	    
-	    <div class="item" >
+	    <div class="item existing" >
     	
 	    	<div class="one">Rent</div>
 			<div class="three">$1,895</div>
@@ -912,7 +923,7 @@
 			
 	    </div>
 	    
-	    <div class="item" >
+	    <div class="item existing" >
     	
 	    	<div class="one">Seattle Utilities</div>
 			<div class="three">~$150</div>
@@ -923,7 +934,7 @@
 			
 	    </div>
 	    
-	    <div class="item" >
+	    <div class="item existing" >
     	
 	    	<div class="one">Seattle Light</div>
 			<div class="three">~$180</div>
@@ -934,7 +945,7 @@
 			
 	    </div>
 	    
-	    <div class="item" >
+	    <div class="item existing" >
     	
 	    	<div class="one">Puget Energy</div>
 			<div class="three">~$150</div>
@@ -945,7 +956,7 @@
 			
 	    </div>
 	    
-	    <div class="item" >
+	    <div class="item existing" >
     	
 	    	<div class="one">Wave Broadband</div>
 			<div class="three">$57</div>
@@ -970,7 +981,7 @@
 	    
 -->
 
-<div class="item" style="background: transparent">
+<div class="item create" style="background: transparent">
     				<a class="addnew">
     					<img src="_img/icon_new_black.svg">
     					<span>Create a new bill</span>

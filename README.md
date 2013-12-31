@@ -1,6 +1,27 @@
 rocket
 ======
 
+# UX Problems
+- Alerts plan and list is needed.
+- Savings are not a priority
+- No view for budget implication after adding a transaction
+- What pro features would we have? Reporting?
+- No access to settings
+
+# Questions?
+- If we're only budgeting for this period and the next, how do we warn the user if they're over budget?
+- Most thinking has been around this being fortnightly, what options would we give for "periods" and would any of them break the structure of the app?
+- How do we handle credit cards?
+- Clear plan needed for initial set up to ensure it's painless for the user even in the middle of a period.
+- Where do we store user's data? MYSQL? iCloud?
+- Can we run PHP on a phone?
+- How we ensure that transactions are up to date?
+- What if a duplicate transaction is entered?
+- Should we notify the user if a transaction was entered that wasn't them? 
+- Is there opportunity in showing "offers" non-intrusively?
+
+### Bugs
+
 # Big Bugs
 - Keyboard glitches when editing info on push panels
 - scrollTop not working when transitioning between sections
@@ -10,6 +31,20 @@ rocket
 # Little Bugs
 - No "count up" scrolling happening on big numbers
 - last row of numbers not working on keypad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Transactions
 
@@ -43,39 +78,5 @@ rocket
 ###
 
 
-
-
-
-var hasdec = 0;
-var fromdec = 0;
-
-# press .key
-
-if fromdec < 2
-
-if length < 5
-	add digit
-
-else if length == 5
-	no add digit
-	shake
-
-else if fromdec == 2
-	no add digit
-	shake
-
-# press .key
-
-if hasdec == 1 
-	fromdec += 1
-
-# press .del
-
-if (length > 0 && fromdec > 0)
-	length -1
-	fromdec -1
-
-else if (length > 0 && fromdec == 0)
-	length -1
 
 

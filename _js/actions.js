@@ -13,39 +13,37 @@ $( document ).ready(function() {
 	$( "#wrapper section" ).hide();
 	$( ".section_head" ).hide();
 	$( ".back_button" ).hide();
-	$( "#new" ).show();
+	$( "#status" ).show();
 /* 	$( ".section_head.status" ).show(); */
-	$("#splash").hide();
+/* 	$("#splash").hide(); */
 	$("#blackbar").hide();
 	$(".next, .prev").hide();
 	
 	
 	
+/*
 function resetKeypad() {
    $( "#numBox").innerHTML("");
    hasdec = false;
    fromdec = 0;
 }	
 	
+*/
 	// PREVENT ELASTIC SCROLLING
  
-  /*
-  
+    
 	$(document).bind(
 		'touchmove', function(e) {
 		e.preventDefault();
 	});
-*/
 
 
-/*
 
-		$("#splash").delay(1500).fadeTo(400, 0, function() {
+		$("#splash").delay(500).fadeTo(400, 0, function() {
 	        $(this).hide();
 	    }); 
 	              
 	
-*/
 
 
 
@@ -77,8 +75,13 @@ function resetKeypad() {
 	    
 	});
 	
-	$( "#bills .item" ).hammer().on("tap", function(ev) {
+	$( "#bills .item.existing" ).hammer().on("tap", function(ev) {
 	  $( ".pushpanel.bills" ).animate({marginLeft: '0'}, 0);
+	    
+	});
+	
+	$( "#bills .item.create" ).hammer().on("tap", function(ev) {
+	  $( ".pushpanel.bill_create" ).animate({marginLeft: '0'}, 0);
 	    
 	});
 	  
