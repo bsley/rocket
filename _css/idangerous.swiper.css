@@ -116,3 +116,64 @@ Pagination Styles
 	/* Specific visible button style: */	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper-container {
+  width: 320px;
+  height: 80%;
+
+
+}
+
+.swiper-slide {
+	/*
+background: url(http://payload224.cargocollective.com/1/0/128/6782504/689_small_032.jpg);
+	background-size: 100% 100%;
+*/
+/* 	background: aqua; */
+	width: 320px;
+	height: 300px;
+	
+}
+
+
+.pagination {
+  position: absolute;
+  z-index: 20;
+  left: 44%;
+  top: 450px;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10000px;
+  background: black;
+  margin-right: 5px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.swiper-visible-switch {
+  background: pink;
+}
+.swiper-active-switch {
+  background: #fff;
+}

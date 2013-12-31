@@ -2,11 +2,17 @@ rocket
 ======
 
 # UX Problems
-- Alerts plan and list is needed.
 - Savings are not a priority
-- No view for budget implication after adding a transaction
 - What pro features would we have? Reporting?
 - No access to settings
+
+# Missing Views
+- Budget implication after adding a transaction
+- Add New Budget
+- Add New Bill
+- Alerts
+- Settings
+
 
 # Questions?
 - If we're only budgeting for this period and the next, how do we warn the user if they're over budget?

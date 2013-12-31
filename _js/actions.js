@@ -1,8 +1,14 @@
 
 
 
-
 $( document ).ready(function() {
+
+
+
+ var mySwiper = new Swiper('.swiper-container',{
+    pagination: '.pagination',
+    paginationClickable: true
+  })
 
 
 
@@ -15,7 +21,7 @@ $( document ).ready(function() {
 	$( ".back_button" ).hide();
 	$( "#status" ).show();
 /* 	$( ".section_head.status" ).show(); */
-/* 	$("#splash").hide(); */
+	$("#splash").hide();
 	$("#blackbar").hide();
 	$(".next, .prev").hide();
 	
@@ -31,19 +37,23 @@ function resetKeypad() {
 */
 	// PREVENT ELASTIC SCROLLING
  
+/*
     
 	$(document).bind(
 		'touchmove', function(e) {
 		e.preventDefault();
 	});
+*/
 
 
+/*
 
 		$("#splash").delay(500).fadeTo(400, 0, function() {
 	        $(this).hide();
 	    }); 
 	              
 	
+*/
 
 
 

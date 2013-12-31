@@ -487,7 +487,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 #status {
 	
 	min-height: 100%;
-	margin-top: 50px;
+	margin-top: 60px;
 	/* background: white; */
 	/* color: #000; */
 	overflow: auto;
@@ -497,10 +497,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 }
 
 #status .equation {
-	padding-top: 20px;
+	
 	display: block;
 	overflow: auto;
-	margin-top: 10px;
 		
 
 }
@@ -533,7 +532,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 	padding-top:0;
 	font-size:8em;
 /* 	border: 1.5px solid #fff; */
-	color: #000;
+	color: #232323;
 	text-align: center;
 	font-family: 'Source Code Pro';
 	letter-spacing: -5px;
@@ -555,6 +554,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0084', end
 #status #items {
 	width: 80%;
 	padding: 5% 10% 5% 10%;
+	color: white;
 }
 
 #status #items .row {
@@ -1090,6 +1090,10 @@ path, polyline, line, ellipse, polygon, circle  {
 /* 	background: black; */
 	color: #fff;
 }
+
+
+
+
 
 
 

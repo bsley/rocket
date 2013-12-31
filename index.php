@@ -16,24 +16,21 @@
 		
 		<link rel="stylesheet" type="text/css" href="_css/clear.css" />
 		<link rel="stylesheet" type="text/css" href="_css/screen.css" />
+		<link rel="stylesheet" type="text/css" href="_css/idangerous.swiper.css" />
+
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		
-<!-- 		<script src="http://code.jquery.com/jquery-latest.js"></script> -->
-<!-- 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.js"></script> -->
-		
-<!--
-		<link href="_hook/hook.css" rel="stylesheet">
-
-	    <script src="_hook/mousewheel.js"></script>
-	    <script src="_hook/hook.min.js"></script>
--->
 
 		<script src="_js/actions.js"></script>
 		<script src="_js/jquery.maskMoney.js"></script>
+		<script src="_js/idangerous.swiper-2.1.min.js"></script>
+
 
 		<script src="http://eightmedia.github.io/hammer.js/dist/jquery.hammer.min.js"></script>
+			
+			
 			
 
 	</head>
@@ -381,82 +378,144 @@
     <section id="status">
     
 	   
+  	 <div class="swiper-container">
+    <div class="swiper-wrapper">
+    
+		<div class="swiper-slide">
+		        
+			<div id="items" class="equation">
+				<div class="row">
+					<div class="left">Cash</div>
+					<div class="right">$2,212</div>
+				</div>
+				
+				<div class="row">
+					<div class="left">Bills (this period)</div>
+					<div class="right">-$520</div>
+				</div>
+				
+				<div class="row">
+					<div class="left">Budget Remaining</div>
+					<div class="right">-$1,200</div>
+				
+				</div>
+				
+				
+				<div class="row">
+					<div class="left">Next Period</div>
+					<div class="right">-$183</div>
+				
+				</div>		
+				
+			</div>
+			
+			<div id="main">
+    
+	   			<div id="number"><span>$</span>492</div> 
+	    		
+			</div>
+		
+		</div>
+		
+		<div class="swiper-slide">
+			
+			<div class="item" >
+	    	
+		    	<div class="one">Reminder: Pay Seattle Public Ulilities</div>			
+				<div class="details">
+					<div>before Friday</div>
+				</div>
+				
+		    </div>
+		</div>
+		
+		<div class="swiper-slide">
+			
+			
+			<div class="item" >
+	    	
+		    	<div class="one">Pay Period</div>			
+				<div class="details">
+					<div>Set as every 14 days (on Friday)</div>
+				</div>
+				
+		    </div>
+		    
+		    <div class="item" >
+	    	
+		    	<div class="one">Push Notifications</div>			
+				<div class="details">
+					<div>Upcoming Bills, Low Balance</div>
+				</div>
+				
+		    </div>
+		    
+		    <div class="item" >
+	    	
+		    	<div class="one">Currency</div>			
+				<div class="details">
+					<div>$USD</div>
+				</div>
+				
+		    </div>
+		    
+		    <div class="item" >
+	    	
+		    	<div class="one">Data Backup</div>			
+				<div class="details">
+					<div>Dropbox Account (jeremy@bsley.com)</div>
+				</div>
+				
+		    </div>
+		   
+		   
+		    <div class="item" >
+	    	
+		    	<div class="one">Having Problems?</div>			
+				<div class="details">
+					<div>Contact our support staff</div>
+				</div>
+				
+		    </div> 
+		    <div class="item" >
+	    	
+		    	<div class="one">Credits</div>			
+				<div class="details">
+					<div>Designed and built by smpl.</div>
+				</div>
+				
+		    </div>
+				
+			
+		</div>
+		      
+        
+    </div>
+    <div class="pagination"></div>
+  </div>
+  
   
   
 
     
-    <div id="items" class="equation">
-		<div class="row">
-			<div class="left">Cash</div>
-			<div class="right">$2,212</div>
-		</div>
-		
-		<div class="row">
-			<div class="left">Bills (this period)</div>
-			<div class="right">-$520</div>
-		</div>
-		
-		<div class="row">
-			<div class="left">Budget Remaining</div>
-			<div class="right">-$1,200</div>
-
-		</div>
-
-
-		<div class="row">
-			<div class="left">Next Period</div>
-			<div class="right">-$183</div>
-
-		</div>
-		
-		
-		
-		<!--
-<div class="row">
-			<div class="left">&nbsp;</div>
-			<div class="right">$492</div>
-
-		</div>
--->
-		
-	<!--
-	<div class="row">
-			<div class="left">Other?</div>
-			<div class="right">-$20</div>
-
-		</div>
--->
-		
-		<!--
-
-		<div class="row" id="balance">
-			<div class="left">Balance</div>
-			<div class="right">$1,060</div>
-
-		</div>
--->
-		
-		
-	
-	</div>
-	
-	   <div id="main">
     
-	    <div id="number"><span>$</span>492</div>
-	    
-	</div>
+	
+	  <!--
+ 
+-->
 	
 	 
 	
-	<div id="nextsteps">
+	<!--
+<div id="nextsteps">
 	
-<!-- 		<a href="" class="allocate" >Allocate your balance</a> -->
-	<!-- 	<a href="" class="">See next period</a> -->
+		<a href="" class="allocate" >Allocate your balance</a>
+		<a href="" class="">See next period</a> 
 		
 		
 		
 	</div>
-<!--     	    <div id="label">23 days till your next check.</div> -->
+-->
 
     
 	
@@ -998,66 +1057,7 @@
 	
 	
 	
-<!-- 	SETTINGS -->
 
-
-	<section id="settings">
-	
-		<div class="item" >
-    	
-	    	<div class="one">Pay Period</div>			
-			<div class="details">
-				<div>Set as every 14 days (on Friday)</div>
-			</div>
-			
-	    </div>
-	    
-	    <div class="item" >
-    	
-	    	<div class="one">Push Notifications</div>			
-			<div class="details">
-				<div>Upcoming Bills, Low Balance</div>
-			</div>
-			
-	    </div>
-	    
-	    <div class="item" >
-    	
-	    	<div class="one">Currency</div>			
-			<div class="details">
-				<div>$USD</div>
-			</div>
-			
-	    </div>
-	    
-	    <div class="item" >
-    	
-	    	<div class="one">Data Backup</div>			
-			<div class="details">
-				<div>Dropbox Account (jeremy@bsley.com)</div>
-			</div>
-			
-	    </div>
-	   
-	   
-	    <div class="item" >
-    	
-	    	<div class="one">Having Problems?</div>			
-			<div class="details">
-				<div>Contact our support staff</div>
-			</div>
-			
-	    </div> 
-	    <div class="item" >
-    	
-	    	<div class="one">Credits</div>			
-			<div class="details">
-				<div>Designed and built by smpl.</div>
-			</div>
-			
-	    </div>
-		
-	</section>
           
       
     </div>
